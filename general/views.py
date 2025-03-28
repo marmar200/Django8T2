@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import User
+from .forms import User, SignUp
 
 
 # Create your views here.
@@ -13,3 +13,9 @@ def login(request):
     response['form'] = User()
 
     return render(request, 'general/login.html', response)
+
+
+def sign_up(request):
+    response = {}
+    response['form'] = SignUp()
+    return render(request, 'general/sign_up.html', response)
